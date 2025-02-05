@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://maonidrive.com/
+
+# Sitemaps
+Sitemap: https://maonidrive.com/sitemap.xml

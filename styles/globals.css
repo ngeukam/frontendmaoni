@@ -1,0 +1,283 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary: 167, 27, 74; /* #A71B4A*/
+    --color-secondary: 74, 76, 90; /* #4a4c5a*/
+
+    --color-bg: 243, 244, 245; /* #f3f4f5*/
+    --color-bg-side: 252, 251, 255; /* #fcfdff*/
+    --color-bg-black: 0, 0, 0;
+    --digital-category-bgc: #ade8f4;
+    --fashion-category-bgc: #ffddd2;
+    --beauty-category-bgc: #ddd92a;
+    --sport-category-bgc: #ffd60a;
+    --house-category-bgc: #ccd5ae;
+    --toy-category-bgc: #cce3de;
+    --stationery-category-bgc: #fbb13c;
+
+    --color-text-base: 66, 71, 80; /* #424750*/
+    --color-text-muted: 107, 114, 128; /*#6b7280*/
+    --color-text-side: 255, 231, 231; /*#fff*/
+    --font-family: iranyekan, "IRANSans", "Tahoma";
+  }
+
+  .dark {
+    --color-bg: 15, 23, 42; /* #0f172a*/
+    --color-bg-side: 30, 41, 59; /* #1e293b*/
+    --digital-category-bgc: #0d4c76;
+    --fashion-category-bgc: #892a19;
+    --beauty-category-bgc: #6d305f;
+    --sport-category-bgc: #650606;
+    --house-category-bgc: #164c4b;
+    --toy-category-bgc: #6d3d4b;
+    --stationery-category-bgc: #6a4202;
+
+    --color-text-base: 226, 232, 240; /*#e2e8f0*/
+    --color-text-muted: 140, 154, 175; /*#8c9aaf*/
+    --color-text-side: 255, 231, 231; /*#fff*/
+  }
+
+  html[dir="ltr"] {
+    --font-family: "Poppins", "Roboto", "sans-serif";
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: rgb(var(--color-bg));
+  color: rgb(var(--color-text-base));
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: bold;
+  src: url("/fonts/woff/iranyekanwebbold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebbold.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 100;
+  src: url("/fonts/woff/iranyekanwebthin.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebthin.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/woff/iranyekanweblight.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanweblight.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: normal;
+  src: url("/fonts/woff/iranyekanwebregular.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("/fonts/ttf/iranyekanwebregular.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 500;
+  src: url("/fonts/woff/iranyekanwebmedium.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebmedium.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 800;
+  src: url("/fonts/woff/iranyekanwebextrabold.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("/fonts/ttf/iranyekanwebextrabold.ttf") format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 850;
+  src: url("/fonts/woff/iranyekanwebblack.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url("/fonts/ttf/iranyekanwebblack.ttf")
+      format("truetype");
+  font-display: swap;
+}
+
+@font-face {
+  font-family: iranyekan;
+  font-style: normal;
+  font-weight: 900;
+  src: url("/fonts/woff/iranyekanwebextrablack.woff") format("woff"),
+    /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+      url("/fonts/ttf/iranyekanwebextrablack.ttf") format("truetype");
+  font-display: swap;
+}
+
+.slick-dots li button::before {
+  font-size: 12px !important;
+}
+
+.slick-prev.slick-disabled:before,
+.slick-next.slick-disabled:before {
+  opacity: 0.45 !important;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  opacity: 9 !important;
+  content: "" !important;
+}
+
+@media (min-width: 1024px) {
+  .slick-dots li button:before {
+    font-size: 12px;
+  }
+  .slick-dots {
+    padding-bottom: 40px !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #a71b4a;
+  border-radius: 100vw;
+}
+
+/* input */
+
+input,
+select {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+input:focus,
+select:focus {
+  background-color: transparent;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+::placeholder {
+  color: #a9abac;
+  font-size: 14px;
+}
+
+input::placeholder {
+  font-size: 16px;       /* Increases the font size */
+  color: #a9abac;           /* Changes the placeholder text color */
+  font-weight: normal;     /* Makes the text bold */
+}
+
+.star {
+  font-size: 25px; /* Adjust size as needed */
+  padding: 4px;
+  margin: 2px;
+  border-radius: 10%;
+  display: inline-block;
+  color: white;
+  text-align: center;
+  line-height: 20px;
+  cursor: pointer;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+/* Ajustement sur petits écrans */
+@media (max-width: 768px) {
+  .star {
+      font-size: 1.5rem;
+      margin: 0 2px;
+      line-height: 18px;
+      display: flex
+  }
+}
+
+@media (max-width: 480px) {
+  .star {
+      font-size: 1.2rem;
+      line-height: 18px;
+      display: flex
+  }
+}
+
+.star:hover {
+  transform: scale(1.1);
+}
+
+.sticky-top-card {
+  position: sticky;
+  top: 0; /*Distance depuis le haut de l'écran */
+  /* z-index: 1000; Assurez-vous qu'il est au-dessus d'autres éléments si nécessaire */
+  padding-bottom: 16px; /* Optionnel : ajoutez de l'espace interne*/
+}
+
+.highlighted {
+  background-color: #4fe5eb;
+  transition: background-color 1s ease-out;
+}
+
+/* Spinner CSS */
+/* .spinner {
+  border: 4px solid #ffffff;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+} */
+
+/* @keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+} */
