@@ -9,8 +9,8 @@ const Logo = () => {
         <Image
           src="/images/logo.png"
           alt="maonidrive-logo"
-          width={120}
-          height={25}
+          width={150}
+          height={55}
           objectFit="contain"
           className="cursor-pointer md:ltr:-mr-3"
         />

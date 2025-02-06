@@ -80,7 +80,7 @@ const HeroSection: NextPage<{ brandContent: IBrand[], bannerContent: IBanner[] }
                 </div>
             </div>
 
-            <Brands />
+            <Brands brandContent={brandContent} />
             <Banners bannerContent={bannerContent} />
         </>
     );

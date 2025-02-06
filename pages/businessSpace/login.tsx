@@ -23,6 +23,7 @@ const Login: NextPage = () => {
   const userInfo = useSelector((state: IUserInfoRootState) => {
     return state.userInfo.userInformation;
   });
+
   useEffect(() => {
     if (successlog) {
       const timer = setTimeout(() => {
@@ -53,11 +54,7 @@ const Login: NextPage = () => {
       }
       if (message === "Login successfully!") {
         dispatch(userInfoActions.userLogin(data));
-        jsCookie.set("userInfo", JSON.stringify(data), {
-          expires: 60, // Expiration en secondes (60 jours)
-          sameSite: "Strict",
-          // secure: process.env.NODE_ENV === "production", // Seulement en HTTPS en prod
-        });
+        jsCookie.set("userInfo", JSON.stringify(data));
         setSuccessLog(true)
         router.push("/");
       }

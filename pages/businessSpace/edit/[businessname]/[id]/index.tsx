@@ -19,7 +19,7 @@ const EditBusinessPage: NextPage<{
     const [errorMessage, setErrorMessage] = useState("");
     const { isLoadingLanguage } = useLanguage();
     const businessTypes = [{ name: 'private', id: "1" }, { name: 'public', id: "2" }, { name: 'parapublic', id: "3" }]
-
+    const {t} = useLanguage();
     const userInfo = useSelector(
         (state: IUserInfoRootState) => state.userInfo.userInformation
     );
@@ -48,7 +48,7 @@ const EditBusinessPage: NextPage<{
             }
             const response = await updateBusiness(requestData.business, businessinfo?.id ?? '', userInfo?.access_token ?? '');
             if (response?.name) {
-                toast.success("Successfully updated!");
+                toast.success(t.updateSuccess ||"Successfully updated!");
                 router.push("/businessSpace/profile");
                 setSuccessEdit(true);
             }

@@ -8,13 +8,20 @@ import Footer from "../footer";
 import { ToastContainer } from "react-toastify";
 import NextNProgress from "nextjs-progressbar";
 import { useLanguage } from "../../hooks/useLanguage";
+import Image from "next/image";
 
 const Layout: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const { isLoadingLanguage, detectedLanguage } = useLanguage();
   if (isLoadingLanguage) {
     return (
       <div className="flex justify-center items-center h-screen"> {/* Center the spinner */}
-        <p>Language is loading...</p>
+        <Image
+          src="/images/logo.png"
+          alt="maonidrive-logo"
+          width={220}
+          height={125}
+          objectFit="contain"
+        />
       </div>
     )
   }

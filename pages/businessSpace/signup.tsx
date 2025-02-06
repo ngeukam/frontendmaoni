@@ -11,6 +11,7 @@ import { getCategories, postSignup } from "../../lib/types/helpers/backendHelper
 import { toast } from "react-toastify";
 import { IBusiness } from "../../lib/types/business";
 import { ICategory } from "../../lib/types/categories";
+import { useLanguage } from "../../hooks/useLanguage";
 
 const SignUp: NextPage<{
   categories: ICategory[];
@@ -21,7 +22,7 @@ const SignUp: NextPage<{
   const [load, setLoad] = useState(false);
   const { redirect } = router.query;
   const [successcreate, setSuccessCreate] = useState(false);
-
+  const {t} = useLanguage();
 
   const userInfo = useSelector(
     (state: IUserInfoRootState) => state.userInfo.userInformation
@@ -60,12 +61,8 @@ const SignUp: NextPage<{
       if (response?.access_token) {
         router.push(`/businessSpace/edit/${(business?.name ?? '').replace(/\s+/g, '-')}/${response?.business_id}`)
         dispatch(userInfoActions.userLogin(response));
-        jsCookie.set("userInfo", JSON.stringify(response), {
-          expires: 60, // Expiration en secondes (60 jours)
-          sameSite: "Strict",
-          // secure: process.env.NODE_ENV === "production", // Seulement en HTTPS en prod
-        });
-        toast.success("Account created sucessfully!")
+        jsCookie.set("userInfo", JSON.stringify(response));
+        toast.success(t.accountCreated || "Account created sucessfully!")
         setSuccessCreate(true)
         return;
       }

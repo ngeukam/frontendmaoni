@@ -197,10 +197,13 @@ const EnteringBoxEditBusiness: React.FC<Props> = ({
 
                             <div className="mt-2 relative">
                                 <Image
-                                    src={logoUrl || (businessData.logo ? `${process.env.NEXT_PUBLIC_MEDIA_URL}${businessData.logo}` : "")}
+                                    src={logoUrl || (businessData.logo ? `${process.env.NEXT_PUBLIC_MEDIA_URL}${businessData.logo}` : "/images/default-business.webp")}
                                     alt="Business Logo"
-                                    className="w-32 h-32 object-cover"
+                                    width={32}
+                                    height={32}
+                                    className="object-cover"
                                 />
+
                                 {/* Cross icon */}
                                 <button
                                     type="button"

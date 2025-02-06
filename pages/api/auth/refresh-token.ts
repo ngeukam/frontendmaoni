@@ -35,7 +35,7 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
     }
 
     const userInfo = JSON.parse(userInfoCookie);
-    const { access_token, refresh_token } = userInfo || {};
+    const { refresh_token } = userInfo || {};
 
     // Vérifier si le refresh token est aussi expiré
     if (TokenIsExpired(refresh_token)) {
@@ -54,8 +54,12 @@ handler.post(async (req: NextApiRequest, res: NextApiResponse) => {
 
         userInfo.access_token = newAccessToken;
         userInfo.refresh_token = newRefreshToken;
-
-        res.setHeader('Set-Cookie', `userInfo=${encodeURIComponent(JSON.stringify(userInfo))}; Path=/; Max-Age=5184000; SameSite=Strict; ${process.env.NODE_ENV === "production" ? "Secure;" : ""}`);
+        const expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + 60); // Ajoute 60 jours à la date actuelle
+        
+        res.setHeader('Set-Cookie', `userInfo=${encodeURIComponent(JSON.stringify(userInfo))}; Path=/; Expires=${expirationDate.toUTCString()}; SameSite=Strict; ${process.env.NODE_ENV === "production" ? "Secure;" : ""}`);
+        
+        // res.setHeader('Set-Cookie', `userInfo=${encodeURIComponent(JSON.stringify(userInfo))}; Path=/; Max-Age=5184000; SameSite=Strict; ${process.env.NODE_ENV === "production" ? "Secure;" : ""}`);
 
         return res.status(200).json({ userInfo:userInfo });
     } catch (error) {

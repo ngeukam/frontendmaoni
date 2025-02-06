@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL + "api";
+const API_URL = process.env.NEXT_PUBLIC_BACKEND_URL;
 const axiosAPI = axios.create({
   baseURL: API_URL,
   validateStatus: function (status) {

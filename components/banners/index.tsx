@@ -31,7 +31,7 @@ const Banner: React.FC<Props> = ({ bannerContent }) => {
                       href={href || ''}
                       imgSrc={imgSrc || ''}
                       imgWidth={imgWidth || 900}
-                      imgHeight={imgHeight || 300}
+                      imgHeight={imgHeight || 400}
                       key={id}
                     />
                   );

@@ -90,12 +90,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ onAddCompany }) => {
 
 
             {loading && (
-                <div className="absolute bg-white shadow-lg p-4 text-center w-full z-50">
+                <div className="absolute bg-white shadow-lg p-4 text-center w-full z-50 rounded-md">
                     <p className="text-gray-500">{t.loading}...</p>
                 </div>
             )}
             {error && (
-                <div className="absolute bg-white shadow-lg p-4 text-center w-full z-50">
+                <div className="absolute bg-white shadow-lg p-4 text-center w-full z-50 rounded-md">
                     <p className="text-red-500">{error}</p>
                 </div>
             )}

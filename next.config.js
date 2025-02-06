@@ -8,7 +8,7 @@ const nextConfig = {
   //   localeDetection: false,
   // },
   images: {
-    domains: ["127.0.0.1", "localhost"],
+    domains: ["127.0.0.1", "localhost", "api.maonidrive.com"],
     // unoptimized: process.env.NODE_ENV === "development", // Pour éviter l'optimisation en dev
   },
   

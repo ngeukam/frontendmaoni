@@ -86,12 +86,12 @@ const SearchBar = () => {
       </div>
 
       {loading && (
-        <div className="absolute w-full md:w-[90%] px-4 md:ltr:ml-4 rounded-lg md:rtl:mr-4 bg-white shadow-lg max-h-100 text-center z-[2000] overflow-y-auto">
+        <div className="absolute w-full md:w-[90%] px-4 md:ltr:ml-4 rounded-md md:rtl:mr-4 bg-white shadow-lg max-h-100 text-center z-[2000] overflow-y-auto">
           <p className="text-gray-500 text-[14px]">{t.loading}...</p>
         </div>
       )}
       {error && (
-        <div className="absolute w-full md:w-[90%] px-4 md:ltr:ml-4 md:rtl:mr-4 rounded-lg bg-white shadow-lg max-h-100 text-left z-[2000] overflow-y-auto">
+        <div className="absolute w-full md:w-[90%] px-4 md:ltr:ml-4 md:rtl:mr-4 rounded-md bg-white shadow-lg max-h-100 text-left z-[2000] overflow-y-auto">
           <p className="text-red-500 font-normal text-left text-[14px]">{error}</p>
         </div>
       )}
@@ -142,7 +142,7 @@ const SearchBar = () => {
         </ul>
       )}
       {searchQuery && results.length === 0 && (
-        <div className="absolute w-full rounded-lg md:w-[90%] px-4 md:ltr:ml-4 md:rtl:mr-4 bg-white shadow-lg max-h-100 text-left z-[2000] overflow-y-auto">
+        <div className="absolute w-full rounded-md md:w-[90%] px-4 md:ltr:ml-4 md:rtl:mr-4 bg-white shadow-lg max-h-100 text-left z-[2000] overflow-y-auto">
           <p className="text-gray-800 font-semibold text-left text-[14px]">{t.notFound}</p>
         </div>
       )}
